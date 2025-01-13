@@ -32,7 +32,7 @@
                 programs.direnv = {
                   enable = true;
                   config = {
-                    whitelist.prefix = [ "~" ]; # this is unsafe for real workstations
+                    whitelist.prefix = [ "~/" ]; # this is unsafe for real workstations
                   };
                 };
 
