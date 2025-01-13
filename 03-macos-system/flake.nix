@@ -26,6 +26,9 @@
                 home.stateVersion = "25.05";
                 home.homeDirectory = lib.mkForce "/Users/demo";
 
+                programs.zsh = {
+                  enable = true;
+                };
                 programs.direnv = {
                   enable = true;
                   config = {
