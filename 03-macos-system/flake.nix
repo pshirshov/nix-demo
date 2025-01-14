@@ -54,6 +54,12 @@
                     jnoortheen.nix-ide
                     mkhl.direnv
                   ];
+                  userSettings = {
+                    "workbench.startupEditor" = "newUntitledFile";
+                    "window.openFoldersInNewWindow" = "on";
+                    "telemetry.enableTelemetry" = false;
+                    "telemetry.enableCrashReporter" = false;
+                  };
                 };
 
               };
