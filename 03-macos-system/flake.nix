@@ -14,31 +14,46 @@
           system = "x86_64-darwin";
           modules = [
             {
-              system.stateVersion = 5;
+              # all nix-darwin options: https://daiderd.com/nix-darwin/manual/index.html
+              system.stateVersion = 5; # a rite, don't think about it
             }
+
             home-manager.darwinModules.home-manager
             {
+              # all Home Manager options: https://home-manager-options.extranix.com/
               home-manager.useGlobalPkgs = true;
               home-manager.useUserPackages = true;
 
               # TODO: show how we can use import instead during the demo
               home-manager.users.demo = { pkgs, lib, ... }: {
-                home.stateVersion = "25.05";
+                home.stateVersion = "25.05"; # a rite, don't think about it
                 home.homeDirectory = lib.mkForce "/Users/demo";
 
                 programs.zsh = {
                   enable = true;
                 };
+
                 programs.direnv = {
                   enable = true;
                   config = {
-                    whitelist.prefix = [ "~/" ]; # this is unsafe for real workstations
+                    # This is unsafe for real workstations. Use subdirectories.
+                    # Slash at the end is important
+                    whitelist.prefix = [ "~/" ];
                   };
                 };
 
+                # nixpkgs packages: https://search.nixos.org/packages?
                 home.packages = with pkgs; [
                   ammonite
                 ];
+
+                programs.vscode = {
+                  enable = true;
+                  extensions = with pkgs.vscode-extensions; [
+                    jnoortheen.nix-ide
+                  ];
+                };
+
               };
             }
           ];
