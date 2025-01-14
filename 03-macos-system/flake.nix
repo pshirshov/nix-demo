@@ -16,6 +16,7 @@
             {
               # all nix-darwin options: https://daiderd.com/nix-darwin/manual/index.html
               system.stateVersion = 5; # a rite, don't think about it
+              nixpkgs.config.allowUnfree = true;
             }
 
             home-manager.darwinModules.home-manager
@@ -51,6 +52,7 @@
                   enable = true;
                   extensions = with pkgs.vscode-extensions; [
                     jnoortheen.nix-ide
+                    mkhl.direnv
                   ];
                 };
 
