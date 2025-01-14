@@ -49,7 +49,7 @@
                 ];
 
                 programs.vscode = {
-                  enable = true;
+                  enable = true; # TODO: explain the Spotlight issues
                   extensions = with pkgs.vscode-extensions; [
                     jnoortheen.nix-ide
                     mkhl.direnv

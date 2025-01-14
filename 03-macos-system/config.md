@@ -8,6 +8,4 @@ curl -L https://nixos.org/nix/install | sh
 ```
 xcode-select --install
 ```
-3. Download VSCode: https://code.visualstudio.com/download , then install it
-4. Install .direnv extension: https://marketplace.visualstudio.com/items?itemName=mkhl.direnv
-
+3. Install VSCode: https://code.visualstudio.com/download
